@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Adicionar Tarefa • Trello{% endblock %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/adicionar.css' %}?v=4">
+<link rel="stylesheet" href="{% static 'css/base.css' %}?v=4">
+{% endblock %}
+
+{% block content %}
+<p><b>Bora trabalhar, {{ request.user.username }}!</b></p> <br>
+
+<form action="{% url 'adicionar_tarefa' projeto.id %}" method="post">
+    {% csrf_token %}
+    <div class="containe">
+        <div class="projeto">
+            <a href="{% url 'tarefa_view' %}">&larr;</a>
+            <h2>Adicionar Tarefa!</h2>
+
+            <label>Nome*</label>
+            <input type="text" name="titulo" class="nova" required>
+            <br>
+
+            <label>Descrição</label>
+            <textarea name="descricao" class="descrição"></textarea>
+            <br>
+
+            <label>Status*</label>
+            <select name="status" class="select2" required>
+                <option value="">Selecione um status</option>
+                <option value="andamento">Em andamento</option>
+                <option value="pendente">Pendente</option>
+                <option value="concluida">Concluída</option>
+            </select>
+            <br>
+
+            <button type="submit" class="adicionar">Adicionar</button>
+        </div>
+    </div>
+</form>
+{% endblock content %}

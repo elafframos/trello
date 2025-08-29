@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}Trello - Projetos{% endblock %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/tarefa.css' %}?v=3">
+{% endblock extra_css %}
+
+{% block content %}
+<p><b>Qual é o Projeto de Hoje?</b></p> <br>
+
+<div class="container">
+    {% if projetos %}
+        {% for projeto in projetos %}
+            <div class="projeto">
+                <div class="nova">
+                    <h2>{{ projeto.nome }}</h2> 
+                    <a href="{% url 'adicionar_tarefa' projeto.id %}" class="adicionar1">&#43;</a>
+                </div>
+                <ul>
+                    {% for tarefa in projeto.tarefas.all %}
+                        <li>{{ tarefa.titulo }} - {{ tarefa.status }}</li>
+                    {% empty %}
+                        <li>Nenhuma tarefa cadastrada</li>
+                    {% endfor %}
+                </ul>
+                <br>
+                <ul class="botoes">
+                    <li>
+                        <a href="{% url 'editar_view' projeto.id %}" class="editar">&#9998; Editar</a>
+                    </li>
+                    <li>
+                        <form action="{% url 'remover_view' projeto.id %}" method="post" style="display: inline;">
+                            {% csrf_token %}
+                            <button type="submit" class="remover" onclick="return confirm('Tem certeza que deseja excluir?')">
+                                🗑️ Remover
+                            </button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p class="no-results">Nenhum projeto encontrado.</p>
+    {% endif %}
+</div>
+{% endblock content %}

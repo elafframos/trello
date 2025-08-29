@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Trello{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}?v=2">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}?v=2">
+    <link rel="stylesheet" href="{% static 'css/celular.css' %}?v=2">
+</head>
+<body>
+    <nav>
+        <h1>Trello</h1>
+        <div class="buscar">
+            <form action="{% url 'tarefa_view' %}" method="get">
+                <input type="text" name="search" placeholder="Buscar projeto..." value="{{ termo }}">
+                <button type="submit" class="pesquisa"><span>&#128269;</span></button>
+            </form>
+        </div>
+        <p class="menu-toggle"> <a href="{% url 'adicionar_view' %}" class="adicionar">Adicionar Projeto</a>
+            <b>Conta</b> 
+        </p>
+    </nav>
+
+    <aside class="sidebar">
+        <button class="close-btn">&larr;</button>
+        <ul>
+            <li><a href="#">&#127968; Início</a></li>
+            <li><a href="#">&#9989; Minhas Tarefas</a></li>
+            <li><a href="#">&#10133; Nova Tarefa</a></li>
+            <li><a href="#">&#128100; Meu Perfil - {{ request.user.username }}</a></li>
+            <li><a href="#">&#10067; Ajuda</a></li>
+            <li><a href="{% url 'logout_view' %}">&#128274; Sair</a></li>
+            <li><a href="#">&#9881; Configurações</a></li>
+        </ul>
+    </aside>
+
+    <div class="overlay"></div>
+
+    <main>
+        {% block content %}
+        <!-- Aqui entra o conteúdo das páginas -->
+        {% endblock %}
+    </main>
+
+    <footer>
+        <b>&copy; Élaff Ramos | 2025</b>
+    </footer>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

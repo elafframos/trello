@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Editar • Trello{% endblock title %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+<link rel="stylesheet" href="{% static 'css/adicionar.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+    <h3><b>Bora trabalhar, {{ request.user.username }}!</b></h3> 
+    <br>
+        
+    <form action="{% url 'editar_view' projeto.id %}" method="post">
+        {% csrf_token %}
+        <div class="containe">
+            <div class="projeto">
+                <a href="{% url 'tarefa_view' %}">&larr;</a>
+                <h2>Editar Projeto!</h2>
+                <label>Nome*</label>
+                <input type="text" name="nome" class="nova" required>
+                <br>
+                <label>Descrição</label>
+                <textarea name="descricao" class="descrição"></textarea>
+                <br>
+                <button class="adicionar">Editar</button>
+            </div>
+        </div>
+    </form>
+{% endblock content %}

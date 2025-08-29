@@ -1,0 +1,112 @@
+h2 {
+    text-align: center;
+}
+
+.projeto {
+    background-color: #ffffff; 
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    justify-content: space-between;
+    transition: transform 0.2s ease;
+    gap: 20px;
+}
+.projeto:hover {
+    transform: translateY(-2px);
+}
+
+.projeto h2 {
+    margin-bottom: 15px;
+}
+
+.nova{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.nova h2 {
+    margin: 0; /* remove espaço padrão */
+    font-size: 1.2rem;
+}
+
+.nova .adicionar1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    font-size: 22px;
+    font-weight: bold;
+    background-color: #22c55e;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color .2s ease, transform .2s ease;
+}
+
+.nova .adicionar1:hover {
+    background-color: #15803d;
+    transform: scale(1.05);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+.botoes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    list-style: none;
+    gap: 10px;
+    height: 1%;
+}
+
+/* Botões */
+.adicionar, .editar, .remover {
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    padding: 8px 14px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+}
+
+/* cores separadas */
+.adicionar {
+    background-color: #22c55e;
+    color: #fff;
+}
+.adicionar:hover {
+    background-color: #15803d;
+    transform: scale(1.05);
+}   
+
+.editar {
+    background-color: #facc15;
+    color: #111;
+}
+.editar:hover {
+    background-color: #ca8a04;
+    transform: scale(1.05);
+}
+
+.remover {
+    background-color: #ef4444;
+    color: #fff;
+}
+.remover:hover {
+    background-color: #b91c1c;
+    transform: scale(1.05);
+}
