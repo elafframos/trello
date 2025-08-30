@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-$qywv(@m$tm*-1%(7*mhyxlde+_-%q+lt(^9)^42$hk&p=b)5g
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG", "True") == "True"
 
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "localhost").split(",")
+ALLOWED_HOSTS = ["trello-gg4h.onrender.com"]
 
 
 # Application definition
