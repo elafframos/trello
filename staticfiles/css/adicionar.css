@@ -1,0 +1,100 @@
+/* adicionar.css */
+
+.name{
+    text-align: center;
+}
+
+/* Título */
+h2 {
+    text-align: center;
+    color: #111827;
+    margin-bottom: 12px;
+}
+
+/* Card do formulário */
+.projeto {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    padding: 40px;             /* espaçamento interno entre os elementos */
+    justify-content: flex-start;
+    width: 100%;
+     /* em vez de width fixa, fica responsivo */
+}
+
+.projeto h2 {
+    margin-bottom: 8px;
+}
+
+/* Lista e itens (se usar ul/li para campos) */
+ul {
+    list-style: none;
+    padding: 0;
+}
+li {
+    margin-bottom: 8px;
+}
+
+/* Campos */
+.nova,
+.descrição,
+.descricao,          /* fallback sem acento */
+.select1,
+.select2 {
+    width: 300%;
+    border: 1px solid #cbd5e1;
+    padding: 10px 12px;
+    border-radius: 8px;
+    background: #ffffff;    
+    color: #111827;
+    outline: none;
+    transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.nova::placeholder,
+.descrição::placeholder,
+.descricao::placeholder {
+    color: #9ca3af;
+}
+
+.nova:focus,
+.descrição:focus,
+.descricao:focus,
+.select1:focus,
+.select2:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37,99,235,0.15);
+}
+
+/* Área de texto */
+.descrição,
+.descricao {
+    min-height: 90px;     /* um pouco mais alto que 70px */
+    resize: vertical;
+}
+
+/* Botão Adicionar */
+.adicionar {
+    background-color: #22c55e;
+    color: #ffffff;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    padding: 10px 16px;
+    font-weight: 600;
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    text-decoration: none;
+    width: 107%;
+}
+.adicionar:hover {
+    background-color: #15803d;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 12px rgba(21,128,61,0.25);
+}
+.adicionar:active {
+    transform: translateY(0);
+    box-shadow: none;
+}

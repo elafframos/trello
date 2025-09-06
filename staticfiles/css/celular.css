@@ -1,0 +1,19 @@
+@media (max-width: 768px) {
+    .corpo {
+        flex-direction: column; /* As colunas vão se transformar em linhas */
+        gap: 10px;
+    }
+
+    .tarefa {
+        width: 100%; /* As caixas vão ocupar a largura total */
+        margin-bottom: 20px;
+    }
+}
+
+footer {
+    text-align: center;
+    font-size: 0.8rem;
+    background: transparent;
+    padding: 20px;
+    color: white;
+}

@@ -1,0 +1,197 @@
+/* html */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 50px; 
+    padding: 20px;
+}
+
+/* Página */
+body {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to right, #f0f4f8, #d9e6f2); /* mais clean */
+    min-height: 100vh;
+    transition: background-color 0.5s ease;
+    font-family: Arial, sans-serif;
+    color: #1f2937; /* cinza bem escuro */
+}
+
+main {
+    flex: 1;
+    display: block;
+    justify-items: center;  /* centraliza horizontal */ 
+    align-items: center;  /* joga para o topo do espaço */
+    padding: 40px 20px;
+}
+
+/* Nav */
+nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+nav h1 {
+    justify-self: start; /* esquerda */
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2563eb;
+}
+
+nav .buscar {
+    justify-self: center; /* centro */
+}
+
+nav .menu-toggle {
+    justify-self: end; /* direita */
+    display: flex;
+    gap: 20px;
+    font-weight: 600;
+}
+
+.buscar{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Botão pesquisa */
+.pesquisa{
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    font-size: 22px;
+    border-radius: 50%;
+    color: #2563eb;
+    transition: background 0.2s;
+}
+.pesquisa:hover{
+    background-color: rgba(37,99,235,0.1);
+}
+
+.menu-toggle {
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+b{
+    padding: 7px;
+}
+
+b:hover {
+    color: #555;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 200px;
+    height: 100%;
+    background-color: #2563eb;
+    padding: 20px;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.3);
+    transition: right 0.3s ease;
+    z-index: 3;
+    color: white;
+}
+
+.sidebar.active {
+    right: 0;
+}
+
+.sidebar .close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+
+.close-btn:hover{
+    color: #ddd;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 20px 0;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+.sidebar ul li a:hover {
+    color: #f3f4f6;
+    transform: scale(1.05);
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 2;
+}
+
+.overlay.active {
+    display: block;
+}
+
+/* Main */
+h1{
+    text-align: center;
+}
+
+.conta{
+    cursor: pointer;
+}
+
+.conta:hover{
+    color: rgb(126, 126, 126);
+}
+
+input{
+    font-size: medium;
+    padding: 7px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    outline: none;
+}
+
+input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 4px rgba(37,99,235,0.3);
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
